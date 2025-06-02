@@ -2,6 +2,7 @@ package com.nuketree3.example.testpdfweb.controller;
 
 import com.nuketree3.example.testpdfweb.service.PdfService;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,9 +11,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.io.IOException;
 
 @Controller
-@AllArgsConstructor
 public class PdfFileReadControllerWithoutPageSplit {
     private final PdfService pdfService;
+
+    public PdfFileReadControllerWithoutPageSplit(PdfService pdfService) {
+        this.pdfService = pdfService;
+    }
 
     @GetMapping("/document-list-without")
     public String getDocumentList(Model model) {

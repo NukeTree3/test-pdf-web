@@ -33,6 +33,8 @@
 </head>
 <body>
 
+${pageNumber+1}/${documentSize}
+
 <div class="image-container">
     <img src="data:image/png;base64,${documentPage}" alt="Page" style="max-width: 100%; max-height: 100%;">
 </div>

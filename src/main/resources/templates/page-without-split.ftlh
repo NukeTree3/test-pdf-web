@@ -29,6 +29,8 @@
 </head>
 <body>
 
+<div id="pageCounter" class="page-counter">1/${documentPages?size}</div>
+
 <img id="imageDisplay" src="data:image/png;base64,${documentPages[0]}" alt="Page">
 
 <div class="navigation">
@@ -45,9 +47,11 @@
     const imgElement = document.getElementById('imageDisplay');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    const pageCounter = document.getElementById('pageCounter');
 
     function updateImage() {
         imgElement.src = "data:image/png;base64," + images[index];
+        pageCounter.textContent = index + 1+'/'+images.length;
         prevBtn.disabled = (index === 0);
         nextBtn.disabled = (index === images.length - 1);
     }

@@ -2,11 +2,14 @@ package com.nuketree3.example.testpdfweb.fileworkers;
 
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.springframework.stereotype.Component;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class FileRead implements FileReadable{
 
     private static final String SOURCE_PATH = "src/main/resources/static/documents/";

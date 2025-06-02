@@ -2,7 +2,6 @@ package com.nuketree3.example.testpdfweb.controller;
 
 import com.nuketree3.example.testpdfweb.helpers.ImageConverter;
 import com.nuketree3.example.testpdfweb.service.PdfService;
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,10 +10,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.io.IOException;
 
 @Controller
-@AllArgsConstructor
 public class PdfFileReadControllerWithPageSplit {
+    private final PdfService pdfService;
 
-    private PdfService pdfService;
+    public PdfFileReadControllerWithPageSplit(PdfService pdfService) {
+        this.pdfService = pdfService;
+    }
 
     @GetMapping("/document-list")
     public String getDocumentList(Model model) {
